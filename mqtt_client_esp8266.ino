@@ -153,8 +153,9 @@ void callback(char *topic, byte *payload, unsigned int length) {
     // const char * mode_str = root["mode"];
     if (root["mode"] == "off") {
       fill_solid(leds, NUM_LEDS, CRGB::Black);
-    } else if (root["mode"] == "rainbow") // strcmp doesn't work, even with
-                                          // casting. this does. for some reason.
+    } else if (root["mode"] ==
+               "rainbow") // strcmp doesn't work, even with
+                          // casting. this does. for some reason.
     {
       fill_rainbow(leds, NUM_LEDS, 0, 21);
     }
